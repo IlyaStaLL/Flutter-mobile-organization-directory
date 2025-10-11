@@ -1,11 +1,62 @@
 import 'package:flutter/material.dart';
-import 'screens/fragment1_part.dart';
-import 'screens/step2_scroll.dart';
-import 'screens/step3_listviews.dart';
-import 'screens/step4_deletion.dart';
-import 'screens/step5_keys.dart';
+import 'screens/fragment1.dart';
+import 'screens/fragment2.dart';
+import 'screens/fragment3.dart';
+import 'screens/fragment4.dart';
+import 'screens/fragment5.dart';
 
-void main() => runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Step5WithKeys()));
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'ПР 4',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _currentIndex = 0;
+
+  final List<Widget> _screens = [
+    Fragment1(),
+    Fragment2(),
+    Fragment3(),
+    Fragment4(),
+    Fragment5(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _screens[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.grey,
+        onTap: (i) => setState(() => _currentIndex = i),
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.looks_one), label: '1'),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_two), label: '2'),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_3), label: '3'),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_4), label: '4'),
+          BottomNavigationBarItem(icon: Icon(Icons.looks_5), label: '5'),
+        ],
+      ),
+    );
+  }
+}
+
+//void main() => runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Step5WithKeys()));
 //void main() => runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Fragment1()));
 
 /*void main() {
