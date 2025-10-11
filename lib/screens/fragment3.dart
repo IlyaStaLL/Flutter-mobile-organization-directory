@@ -32,7 +32,7 @@ class _Fragment3State extends State<Fragment3> {
         itemBuilder: (context, i) => ListTile(
           title: Text(items[i]),
           trailing: IconButton(
-            icon: const Icon(Icons.delete, color: Colors.red),
+            icon: const Icon(Icons.delete, color: Colors.grey),
             onPressed: () => _removeItem(i),
           ),
         ),
