@@ -7,12 +7,12 @@ class Fragment4 extends StatefulWidget {
 
 class _Fragment4State extends State<Fragment4> {
   int counter = 3;
-  final List<String> items = ['Элемент 1', 'Элемент 2', 'Элемент 3'];
+  final List<String> items = ['Кафе 5 звёзд', 'Ресторан 4.5 звёзд', 'Бассейн 3.4 звёзд'];
 
   void _addItem() {
     setState(() {
       counter++;
-      items.add('Элемент $counter');
+      items.add('Новая геоточка № $counter');
     });
   }
 
