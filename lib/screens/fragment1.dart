@@ -7,12 +7,12 @@ class Fragment1 extends StatefulWidget {
 
 class _Fragment1State extends State<Fragment1> {
   int counter = 3;
-  final List<String> items = ['Кафе 5 звёзд', 'Ресторан 4.5 звёзд', 'Бассейн 3.4 звёзд'];
+  final List<String> items = ['Вкусно и Точка', 'БургерКинг', 'Шоколадница'];
 
   void _addItem() {
     setState(() {
       counter++;
-      items.add('Новая геоточка № $counter');
+      items.add('Новое кафе № $counter');
     });
   }
 
@@ -25,7 +25,7 @@ class _Fragment1State extends State<Fragment1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Фрагмент 1: Column')),
+      appBar: AppBar(title: const Text('Фрагмент 1: Column. Кафе')),
       body: SingleChildScrollView(
         child: Column(
           children: List.generate(items.length, (i) {

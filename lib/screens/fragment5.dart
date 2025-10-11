@@ -7,12 +7,12 @@ class Fragment5 extends StatefulWidget {
 
 class _Fragment5State extends State<Fragment5> {
   int counter = 3;
-  final List<String> items = ['Кафе 5 звёзд', 'Ресторан 4.5 звёзд', 'Бассейн 3.4 звёзд'];
+  final List<String> items = ['DNS', 'МВидео', 'Эльдарадо'];
 
   void _addItem() {
     setState(() {
       counter++;
-      items.add('Новая геоточка № $counter');
+      items.add('Новый магазин электронники $counter');
     });
   }
 
@@ -25,7 +25,7 @@ class _Fragment5State extends State<Fragment5> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Фрагмент 5: ListView.custom')),
+      appBar: AppBar(title: const Text('Фрагмент 5: ListView.custom. Магазины электронники')),
       body: ListView.custom(
         childrenDelegate: SliverChildListDelegate(
           List.generate(items.length, (i) {
